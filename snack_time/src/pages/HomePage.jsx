@@ -8,7 +8,7 @@ export const HomePage = () => {
     const handleBtnClick = (e) => {
         if (dataHeading === e) {
             setDataHeading(`${e} asc`)
-            setDataHeading(dataHeading => dataHeading = "")
+            // setDataHeading(dataHeading => dataHeading = "")
         } else {
             setDataHeading(`${e} desc`)
         }
