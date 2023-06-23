@@ -1,0 +1,1 @@
+export const headings = ["ID","Product Name", "Product Weight", "Price (INR)", "Calories", "Ingredients"]
