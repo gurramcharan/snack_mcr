@@ -10,10 +10,8 @@ export const DataProvider = ({children}) => {
     const allSnacks = snacks;
 
     const SearchFilter = searchData.length > 0
-        ? allSnacks.filter((item) => item.product_name.toLowerCase().includes(searchData.toLowerCase()))
-        : searchData.length > 0
-            ? allSnacks.filter((item) => item.ingredients.toLowerCase().includes(searchData.toLowerCase()))
-            : allSnacks;
+        ? allSnacks.filter((item) => item.product_name.toLowerCase().includes(searchData.toLowerCase()) || item.ingredients.find((innerItem) => innerItem.toLowerCase().includes(searchData.toLowerCase())))
+        : allSnacks;
 
     const filteredSnacks = (dataHeading === "" || dataHeading === "Product Name desc" || dataHeading === "Product Weight desc" || dataHeading === "Ingredients desc")
         ? SearchFilter
