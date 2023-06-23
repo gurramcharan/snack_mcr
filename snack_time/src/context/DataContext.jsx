@@ -13,7 +13,7 @@ export const DataProvider = ({children}) => {
         ? allSnacks.filter((item) => item.product_name.toLowerCase().includes(searchData.toLowerCase()) || item.ingredients.find((innerItem) => innerItem.toLowerCase().includes(searchData.toLowerCase())))
         : allSnacks;
 
-    const filteredSnacks = (dataHeading === "" || dataHeading === "Product Name desc" || dataHeading === "Product Weight desc" || dataHeading === "Ingredients desc")
+    const filteredSnacks = (dataHeading === "" || dataHeading === "Product Name desc" || dataHeading === "Product Name asc" || dataHeading === "Product Weight desc" || dataHeading === "Product Weight asc" || dataHeading === "Ingredients desc" || dataHeading === "Ingredients asc")
         ? SearchFilter
         : (dataHeading === "ID desc")
             ? SearchFilter.sort((a, b) => b.id - a.id)
